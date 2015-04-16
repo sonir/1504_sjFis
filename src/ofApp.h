@@ -1,12 +1,14 @@
 #pragma once
 #define PORT 54322
 #define NUM_MSG_STRINGS 20
-#define BLUR 180 //255 is max
 
+#define FPS 120
+#define BLUR 10//180 //255 is max
 
 #include "ofMain.h"
 #include "ofxOsc.h"
 #include "Fis.h"
+#include "ofxXmlSettings.h"
 
 class ofApp : public ofBaseApp{
 
@@ -32,6 +34,11 @@ class ofApp : public ofBaseApp{
         string msg_strings[NUM_MSG_STRINGS];
         float timers[NUM_MSG_STRINGS];
     
+        //Setting
+          ofxXmlSettings XML;
+        string xmlStructure;
+        string message;
+
     
     
         Fis *fis;

@@ -6,24 +6,40 @@
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>05B897ED-EF78-4FD4-9206-01038128E64A</string>
+	<key>IDESourceControlProjectName</key>
+	<string>sjFis</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
+		<key>488801A8044B22BDC4B47B2372927B028AD42F43</key>
+		<string>https://github.com/sonir/1504_sjFis.git</string>
 		<key>AA005C2C69B0D20EC1E9D7E90A120C805800A3B5</key>
 		<string>https://github.com/sonir/slOscManager.git</string>
 	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>sjFis.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
+		<key>488801A8044B22BDC4B47B2372927B028AD42F43</key>
+		<string>../..</string>
 		<key>AA005C2C69B0D20EC1E9D7E90A120C805800A3B5</key>
-		<string>slOscManager/</string>
+		<string>../../../addons/slOscManager</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/sonir/slOscManager.git</string>
+	<string>https://github.com/sonir/1504_sjFis.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>AA005C2C69B0D20EC1E9D7E90A120C805800A3B5</string>
+	<string>488801A8044B22BDC4B47B2372927B028AD42F43</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>488801A8044B22BDC4B47B2372927B028AD42F43</string>
+			<key>IDESourceControlWCCName</key>
+			<string>sjFis</string>
+		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>

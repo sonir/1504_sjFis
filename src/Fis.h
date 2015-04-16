@@ -20,7 +20,6 @@
 
 
 typedef enum {ALL, PF, TB, GT, BA, DR} player_e;
-typedef enum {WHITE, RED, YELLOW, BLUE} flush_color;
 
 typedef struct trigger_t {
     player_e player;
@@ -43,9 +42,12 @@ class Fis {
     void update();
     void draw();
     void setTrigger(trigger_t trg);
+    void resize(int w, int h);
     
     player_e player;
     Screen screen;
+    int direction;
+
 
     
 };

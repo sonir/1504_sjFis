@@ -5,9 +5,28 @@
 //--------------------------------------------------------------
 void ofApp::setup(){
     
+    //XML Setting
+    if( XML.loadFile("fis_setting.xml") ){
+        message = "mySettings.xml loaded!";
+    }else{
+        message = "unable to load mySettings.xml check data/ folder";
+    }
+    cout << message << endl;
     
-    fis = new Fis(TB);
-    fis->setup();
+    //Get player
+    player_e player = (player_e) XML.getValue("PLAYER", (player_e)TB);
+    cout << "player is " << player << endl;
+    //Get Direction
+    int tmp_direction = XML.getValue("DIRECTION", 1);
+    cout << "direction is" << tmp_direction << endl;
+    
+    //Animation
+    ofSetFrameRate(FPS);
+    
+    //Fis
+    fis = new Fis(player);
+    fis->direction = tmp_direction; //set the direction
+    fis->setup(); 
     
     //Graphic
     ofBackground(0);
@@ -82,8 +101,8 @@ void ofApp::keyReleased(int key){
     }else if(key == 'f'){
         
         trigger_t param;
-        param.player=TB;
-        param.color=WHITE;
+        param.player=ALL;
+        param.color=YELLOW;
         fis->setTrigger(param);
         
         
@@ -114,6 +133,8 @@ void ofApp::mouseReleased(int x, int y, int button){
 //--------------------------------------------------------------
 void ofApp::windowResized(int w, int h){
 
+    fis->resize(w,h);
+    
 }
 
 //--------------------------------------------------------------

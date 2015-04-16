@@ -43,6 +43,10 @@
 		F23366D71AE00B0500BC07F2 /* Fis.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F23366D51AE00B0500BC07F2 /* Fis.cpp */; };
 		F23366DB1AE03E9F00BC07F2 /* Screen.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F23366D91AE03E9F00BC07F2 /* Screen.cpp */; };
 		F23367371AE042AC00BC07F2 /* slInterpolation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F23367351AE042AC00BC07F2 /* slInterpolation.cpp */; };
+		F23367441AE0654E00BC07F2 /* ofxXmlSettings.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F233673F1AE0654E00BC07F2 /* ofxXmlSettings.cpp */; };
+		F27060F81AE06A180056B9CB /* tinyxml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F27060F41AE06A180056B9CB /* tinyxml.cpp */; };
+		F27060F91AE06A180056B9CB /* tinyxmlerror.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F27060F61AE06A180056B9CB /* tinyxmlerror.cpp */; };
+		F27060FA1AE06A180056B9CB /* tinyxmlparser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F27060F71AE06A180056B9CB /* tinyxmlparser.cpp */; };
 		F2868CE71ADFD8FD00EE2D36 /* slOscManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F2868CCE1ADFD8FD00EE2D36 /* slOscManager.cpp */; };
 /* End PBXBuildFile section */
 
@@ -138,6 +142,12 @@
 		F23366DA1AE03E9F00BC07F2 /* Screen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Screen.h; sourceTree = "<group>"; };
 		F23367351AE042AC00BC07F2 /* slInterpolation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = slInterpolation.cpp; sourceTree = "<group>"; };
 		F23367361AE042AC00BC07F2 /* slInterpolation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = slInterpolation.h; sourceTree = "<group>"; };
+		F233673F1AE0654E00BC07F2 /* ofxXmlSettings.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxXmlSettings.cpp; sourceTree = "<group>"; };
+		F23367401AE0654E00BC07F2 /* ofxXmlSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxXmlSettings.h; sourceTree = "<group>"; };
+		F27060F41AE06A180056B9CB /* tinyxml.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tinyxml.cpp; sourceTree = "<group>"; };
+		F27060F51AE06A180056B9CB /* tinyxml.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tinyxml.h; sourceTree = "<group>"; };
+		F27060F61AE06A180056B9CB /* tinyxmlerror.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tinyxmlerror.cpp; sourceTree = "<group>"; };
+		F27060F71AE06A180056B9CB /* tinyxmlparser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tinyxmlparser.cpp; sourceTree = "<group>"; };
 		F2868CCE1ADFD8FD00EE2D36 /* slOscManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = slOscManager.cpp; sourceTree = "<group>"; };
 		F2868CCF1ADFD8FD00EE2D36 /* slOscManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = slOscManager.h; sourceTree = "<group>"; };
 		F4F5B6B8BA2BD52C646ED908 /* OscException.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = OscException.h; path = ../../../addons/ofxOsc/libs/oscpack/src/osc/OscException.h; sourceTree = SOURCE_ROOT; };
@@ -227,6 +237,7 @@
 		BB4B014C10F69532006C3DED /* addons */ = {
 			isa = PBXGroup;
 			children = (
+				F23367381AE0654E00BC07F2 /* ofxXmlSettings */,
 				F23366DC1AE041E700BC07F2 /* slInterpolation */,
 				F2868C8E1ADFD8FD00EE2D36 /* slOscManager */,
 				E6053AB7FEC63D5F83825B88 /* ofxOsc */,
@@ -371,6 +382,36 @@
 			path = src;
 			sourceTree = "<group>";
 		};
+		F23367381AE0654E00BC07F2 /* ofxXmlSettings */ = {
+			isa = PBXGroup;
+			children = (
+				F27060F31AE06A180056B9CB /* libs */,
+				F233673E1AE0654E00BC07F2 /* src */,
+			);
+			name = ofxXmlSettings;
+			path = ../../../addons/ofxXmlSettings;
+			sourceTree = "<group>";
+		};
+		F233673E1AE0654E00BC07F2 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				F233673F1AE0654E00BC07F2 /* ofxXmlSettings.cpp */,
+				F23367401AE0654E00BC07F2 /* ofxXmlSettings.h */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		F27060F31AE06A180056B9CB /* libs */ = {
+			isa = PBXGroup;
+			children = (
+				F27060F41AE06A180056B9CB /* tinyxml.cpp */,
+				F27060F51AE06A180056B9CB /* tinyxml.h */,
+				F27060F61AE06A180056B9CB /* tinyxmlerror.cpp */,
+				F27060F71AE06A180056B9CB /* tinyxmlparser.cpp */,
+			);
+			path = libs;
+			sourceTree = "<group>";
+		};
 		F2868C8E1ADFD8FD00EE2D36 /* slOscManager */ = {
 			isa = PBXGroup;
 			children = (
@@ -495,7 +536,9 @@
 				E4B69E210A3A1BDC003C02F2 /* ofApp.cpp in Sources */,
 				72A929D3561B8232A182ABFC /* ofxOscBundle.cpp in Sources */,
 				5864AD82E20F15536D054EA3 /* ofxOscMessage.cpp in Sources */,
+				F27060FA1AE06A180056B9CB /* tinyxmlparser.cpp in Sources */,
 				4ADB88E2FB52E76A471065DE /* ofxOscParameterSync.cpp in Sources */,
+				F27060F81AE06A180056B9CB /* tinyxml.cpp in Sources */,
 				640279EE111671BD026CB013 /* ofxOscReceiver.cpp in Sources */,
 				8F5205AEF8861EF234F0651A /* ofxOscSender.cpp in Sources */,
 				F23367371AE042AC00BC07F2 /* slInterpolation.cpp in Sources */,
@@ -506,9 +549,11 @@
 				F2868CE71ADFD8FD00EE2D36 /* slOscManager.cpp in Sources */,
 				F23366DB1AE03E9F00BC07F2 /* Screen.cpp in Sources */,
 				F23366D71AE00B0500BC07F2 /* Fis.cpp in Sources */,
+				F23367441AE0654E00BC07F2 /* ofxXmlSettings.cpp in Sources */,
 				28090DEB5109115003E8F1C5 /* UdpSocketWin.cpp in Sources */,
 				62545D179C94265CA1389D4A /* OscOutboundPacketStream.cpp in Sources */,
 				C4782ECC372420ACE0615B74 /* OscPrintReceivedElements.cpp in Sources */,
+				F27060F91AE06A180056B9CB /* tinyxmlerror.cpp in Sources */,
 				0546D1A38E13BD319CC9755B /* OscReceivedElements.cpp in Sources */,
 				879A251454401BC0B6E4F238 /* OscTypes.cpp in Sources */,
 			);
@@ -556,6 +601,9 @@
 					../../../addons/ofxOsc/libs/oscpack/src/osc,
 					../../../addons/ofxOsc/src,
 					../../../addons/slInterpolation/src,
+					"../../../addons/ofxXmlSettings/libs/**",
+					"../../../addons/ofxXmlSettings/src/**",
+					"../../../addons/ofxXmlSettings/**",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				OTHER_CPLUSPLUSFLAGS = (
@@ -599,6 +647,9 @@
 					../../../addons/ofxOsc/libs/oscpack/src/osc,
 					../../../addons/ofxOsc/src,
 					../../../addons/slInterpolation/src,
+					"../../../addons/ofxXmlSettings/libs/**",
+					"../../../addons/ofxXmlSettings/src/**",
+					"../../../addons/ofxXmlSettings/**",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				OTHER_CPLUSPLUSFLAGS = (

@@ -30,16 +30,46 @@ void Fis::setup(){
         }
         
     screen.sqr_counter = 0;
+//    if(direction)direction = 1; //1 is to right
+    
+    if(direction==-1){
+        
+        for(int i =0; i<SQR_NUM;i++){
+            trigger_t trg;
+            trg.color = WHITE;
+            trg.player = player;
+            setTrigger(trg);
+        }
+        
+    }
+
     
 }
 
 
 void Fis::setTrigger(trigger_t trg){
     
-    if(trg.player==player){
-        screen.fireSquare();
+    if(trg.player==player || trg.player==ALL){
+        screen.fireSquare(trg.color);
     }
     
+    
+}
+
+void Fis::resize(int w, int h){
+    
+    screen.sc_width = w;
+    screen.sc_height = h;
+    screen.sq_width = w * SQ_WIDTH_RATE;
+    screen.sq_height = h;
+    screen.sq_init = screen.sq_width * (-1);
+    screen.sq_target = screen.sc_width;
+    
+    for(int i=0;i<SQR_NUM; i++){
+        
+        screen.interpolation[i].init(screen.sq_width*-1, screen.sq_width*-1, 1);
+        
+    }
     
 }
 
@@ -58,8 +88,33 @@ void Fis::draw(){
     
     
     for(int i=0; i<SQR_NUM; i++){
-        ofSetColor(255, 255, 255);
-        ofRect(screen.interpolation[i].update(),0.0,SQ_WIDTH,SQ_HEIGHT);
+        switch(screen.colors[i]){
+            case WHITE:
+            ofSetColor(255, 255, 255);
+            break;
+
+            case RED:
+            ofSetColor(255, 0, 0);
+            break;
+            
+            case YELLOW:
+            ofSetColor(255, 255, 0);
+            break;
+            
+            case BLUE:
+            ofSetColor(0, 0, 255);
+            break;
+            
+            default:
+           ofSetColor(0, 255, 0);
+            
+        }
+        
+        if(direction==1){
+            ofRect(screen.interpolation[i].update()*direction,0.0, screen.sq_width, screen.sq_height);
+        }else if(direction==-1){
+            ofRect(screen.interpolation[i].update()*direction+(screen.sq_width),0.0, screen.sq_width, screen.sq_height);
+        }
     }
     
 }
