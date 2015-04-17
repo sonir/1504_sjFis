@@ -18,7 +18,7 @@
 #define PLAYERS_NUM 5+1 //+1 is ALL
 
 #define FILL_DEFAULT false
-#define DURATION_FILL_FADE 6
+#define DURATION_FILL_FADE 4
 
 
 
