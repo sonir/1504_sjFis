@@ -34,13 +34,17 @@ void Fis::setup(){
     
     if(direction==-1){
         
+//        for(int i =0; i<SQR_NUM;i++){
+//            trigger_t trg;
+//            trg.color = WHITE;
+//            trg.player = player;
+//            setTrigger(trg);
+//        }
+
         for(int i =0; i<SQR_NUM;i++){
-            trigger_t trg;
-            trg.color = WHITE;
-            trg.player = player;
-            setTrigger(trg);
+            screen.interpolation[i].now = screen.sc_width;
         }
-        
+
     }
 
     
@@ -64,12 +68,17 @@ void Fis::resize(int w, int h){
     screen.sq_height = h;
     screen.sq_init = screen.sq_width * (-1);
     screen.sq_target = screen.sc_width;
-    
-    for(int i=0;i<SQR_NUM; i++){
-        
-        screen.interpolation[i].init(screen.sq_width*-1, screen.sq_width*-1, 1);
-        
+
+    cout << "rezie" << endl;
+
+    //reset all position
+    for(int i =0; i<SQR_NUM;i++){
+        trigger_t trg;
+        trg.color = WHITE;
+        trg.player = player;
+        setTrigger(trg);
     }
+
     
 }
 
@@ -114,6 +123,7 @@ void Fis::draw(){
             ofRect(screen.interpolation[i].update()*direction,0.0, screen.sq_width, screen.sq_height);
         }else if(direction==-1){
             ofRect(screen.interpolation[i].update()*direction+(screen.sq_width),0.0, screen.sq_width, screen.sq_height);
+//            cout << screen.interpolation[i].update() << endl;
         }
     }
     

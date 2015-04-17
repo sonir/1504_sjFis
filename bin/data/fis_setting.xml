@@ -1,0 +1,4 @@
+<PLAYER> 2 </PLAYER>
+<!--0=ALL, 1=PF, 2=TB, 3=GT, 4=BA, 5=DR -->
+<DIRECTION> 1 </DIRECTION>
+<!--1=TO_RIGHT, -1=TO_LEFT -->
