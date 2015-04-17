@@ -17,6 +17,9 @@
 
 #define PLAYERS_NUM 5+1 //+1 is ALL
 
+#define FILL_DEFAULT false
+#define DURATION_FILL_FADE 6
+
 
 
 typedef enum {ALL, PF, TB, GT, BA, DR} player_e;
@@ -27,7 +30,13 @@ typedef struct trigger_t {
 }trigger_t;
 
 
-
+typedef struct {
+    
+    float r;
+    float g;
+    float b;
+    
+}fill_color_t;
 
 //////////////////////////////////////
 
@@ -43,12 +52,15 @@ class Fis {
     void draw();
     void setTrigger(trigger_t trg);
     void resize(int w, int h);
+    void setFill(player_e assign, int val);
     
     player_e player;
     Screen screen;
     int direction;
 
-
+    //Fill
+    Interpolation fill;
+    fill_color_t fill_color;
     
 };
 

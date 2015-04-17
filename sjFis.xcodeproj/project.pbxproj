@@ -763,6 +763,7 @@
 					/Users/sonir/Documents/boxes/dev_box/of_v0.8.4_osx_release/addons/slInterpolation/libs/necessaryLib/lib/osx,
 					/Users/sonir/Documents/boxes/dev_box/of_v0.8.4_osx_release/addons/slInterpolation/libs/necessaryLib/lib/win_cb,
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				PRODUCT_NAME = "$(TARGET_NAME)Debug";
 				WRAPPER_EXTENSION = app;
 			};
@@ -869,6 +870,7 @@
 					/Users/sonir/Documents/boxes/dev_box/of_v0.8.4_osx_release/addons/slInterpolation/libs/necessaryLib/lib/osx,
 					/Users/sonir/Documents/boxes/dev_box/of_v0.8.4_osx_release/addons/slInterpolation/libs/necessaryLib/lib/win_cb,
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

@@ -30,23 +30,20 @@ void Fis::setup(){
         }
         
     screen.sqr_counter = 0;
-//    if(direction)direction = 1; //1 is to right
     
     if(direction==-1){
         
-//        for(int i =0; i<SQR_NUM;i++){
-//            trigger_t trg;
-//            trg.color = WHITE;
-//            trg.player = player;
-//            setTrigger(trg);
-//        }
-
         for(int i =0; i<SQR_NUM;i++){
             screen.interpolation[i].now = screen.sc_width;
         }
 
     }
-
+    
+    
+    //Init FillColors
+    fill_color.r = 255;
+    fill_color.g = 255;
+    fill_color.b = 255;
     
 }
 
@@ -127,4 +124,54 @@ void Fis::draw(){
         }
     }
     
+    // Fill for Lebero
+    ofSetColor(fill_color.r, fill_color.g, fill_color.b, fill.update());
+    ofRect(0.0 , 0.0 , ofGetWidth(),ofGetHeight());
+    
+}
+
+void Fis::setFill(player_e assign, int val){
+    
+
+    if(assign==player){
+    
+        switch(val){
+                
+            case 1:
+                fill_color.r = 255;
+                fill_color.g = 255;
+                fill_color.b = 255;
+                break;
+                
+            case 2:
+                fill_color.r = 255;
+                fill_color.g = 0;
+                fill_color.b = 0;
+                break;
+                
+            case 3:
+                fill_color.r = 255;
+                fill_color.g = 255;
+                fill_color.b = 0;
+                break;
+                
+            case 4:
+                fill_color.r = 0;
+                fill_color.g = 0;
+                fill_color.b = 255;
+                break;
+                
+                
+        }
+        
+        
+        if(val>0){
+            fill.init(fill.now, 255.0, DURATION_FILL_FADE);
+            
+        }else{
+            fill.init(fill.now, 0.0, DURATION_FILL_FADE);
+            
+        }
+    }
+
 }

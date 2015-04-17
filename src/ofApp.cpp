@@ -64,6 +64,13 @@ void ofApp::update(){
             trg.color = (flush_color)m.getArgAsInt32(1);
             fis->setTrigger(trg);
             
+        }else if(m.getAddress() == "/fill"){
+            
+//            fis->fill = (int) m.getArgAsInt32(0);
+            player_e player = (player_e)m.getArgAsInt32(0);
+            int val = m.getArgAsInt32(1);
+            fis->setFill(player, val);
+            
         }
  
         
@@ -82,7 +89,7 @@ void ofApp::draw(){
     ofRect(0, 0, ofGetWidth(), ofGetHeight());
     
     ofFill();
-    fis->draw();
+    fis->draw();        
     
 }
 
