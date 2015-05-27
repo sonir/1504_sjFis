@@ -27,8 +27,8 @@ void Fis::setup(){
     for(int i=0; i<SQR_NUM;i++){
         
             screen.sqr_position[i] = -1.0;
-        }
-        
+    }
+    
     screen.sqr_counter = 0;
     
     if(direction==-1){
@@ -36,7 +36,7 @@ void Fis::setup(){
         for(int i =0; i<SQR_NUM;i++){
             screen.interpolation[i].now = screen.sc_width;
         }
-
+        
     }
     
     
@@ -52,6 +52,24 @@ void Fis::setTrigger(trigger_t trg){
     
     if(trg.player==player || trg.player==ALL){
         screen.fireSquare(trg.color);
+    }
+    
+    
+}
+
+void Fis::setTriggerComes(trigger_t trg){
+    
+    if(trg.player==player || trg.player==ALL){
+        screen.fireComes(trg.color);
+    }
+    
+    
+}
+
+void Fis::setTriggerGo(trigger_t trg){
+    
+    if(trg.player==player || trg.player==ALL){
+        screen.fireGo(trg.color);
     }
     
     
@@ -87,12 +105,12 @@ void Fis::update(){
 
 void Fis::draw(){
         
-//    ofSetColor(255);
-//    cout << screen.interpolation[0].update() << endl;
-//    ofRect(screen.interpolation[0].update(), 0., SQ_WIDTH,SQ_HEIGHT);
-
+    ofSetColor(255, 255, 255);
+    float foo = screen.intpComes.update();
+    ofRect(0.0,(foo*screen.sc_height), screen.sc_width, screen.sc_height);
     
     
+    //For Basic
     for(int i=0; i<SQR_NUM; i++){
         switch(screen.colors[i]){
             case WHITE:
@@ -124,6 +142,7 @@ void Fis::draw(){
         }
     }
     
+   
     // Fill for Lebero
     ofSetColor(fill_color.r, fill_color.g, fill_color.b, fill.update());
     ofRect(0.0 , 0.0 , ofGetWidth(),ofGetHeight());

@@ -17,7 +17,11 @@ Screen::Screen(){
         colors[i]=WHITE;
         
     }
-        
+    
+    //Setup cometype-square interpolation
+    intpComes.now = sc_height;
+    intpComes.exponential = true;
+    
 }
 
 void Screen::fireSquare(flush_color color){
@@ -30,4 +34,16 @@ void Screen::fireSquare(flush_color color){
     //Ring Buffer
     if(sqr_counter>=SQR_NUM)sqr_counter=0;
     
+}
+
+void Screen::fireComes(flush_color color){
+    
+    intpComes.init(sq_come_init, sq_come_target, SQR_COME_SPEED);
+    
+}
+
+void Screen::fireGo(flush_color color){
+
+    intpComes.init(sq_go_init, sq_go_target, SQR_COME_SPEED);
+
 }

@@ -71,6 +71,24 @@ void ofApp::update(){
             int val = m.getArgAsInt32(1);
             fis->setFill(player, val);
             
+        }else if(m.getAddress() == "/fis/comes"){
+            
+            //stoppig sqr comes
+            // both the arguments are int32's
+            trigger_t trg;
+            trg.player = (player_e)m.getArgAsInt32(0);
+            trg.color = (flush_color)m.getArgAsInt32(1);
+            fis->setTriggerComes(trg);
+            
+        }else if(m.getAddress() == "/fis/go"){
+            
+            //stoppig sqr comes
+            // both the arguments are int32's
+            trigger_t trg;
+            trg.player = (player_e)m.getArgAsInt32(0);
+            trg.color = (flush_color)m.getArgAsInt32(1);
+            fis->setTriggerGo(trg);
+            
         }
  
         

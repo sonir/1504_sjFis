@@ -51,6 +51,8 @@ class Fis {
     void update();
     void draw();
     void setTrigger(trigger_t trg);
+    void setTriggerComes(trigger_t trg);
+    void setTriggerGo(trigger_t trg);
     void resize(int w, int h);
     void setFill(player_e assign, int val);
     
