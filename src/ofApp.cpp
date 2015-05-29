@@ -35,7 +35,7 @@ void ofApp::setup(){
     
     cout << "listening for osc messages on port " << PORT << "\n";
     receiver.setup(PORT);
-    
+        
 }
 
 //--------------------------------------------------------------
@@ -86,7 +86,6 @@ void ofApp::update(){
             // both the arguments are int32's
             trigger_t trg;
             trg.player = (player_e)m.getArgAsInt32(0);
-            trg.color = (flush_color)m.getArgAsInt32(1);
             fis->setTriggerGo(trg);
             
         }

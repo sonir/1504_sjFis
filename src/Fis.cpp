@@ -26,15 +26,15 @@ void Fis::setup(){
     //Reset sreens
     for(int i=0; i<SQR_NUM;i++){
         
-            screen.sqr_position[i] = -1.0;
+            screen.sqr->position[i] = -1.0;
     }
     
-    screen.sqr_counter = 0;
+    screen.sqr->counter = 0;
     
     if(direction==-1){
         
         for(int i =0; i<SQR_NUM;i++){
-            screen.interpolation[i].now = screen.sc_width;
+            screen.sqr->interpolation[i].now = screen.sc_width;
         }
         
     }
@@ -81,10 +81,8 @@ void Fis::resize(int w, int h){
     screen.sc_height = h;
     screen.sq_width = w * SQ_WIDTH_RATE;
     screen.sq_height = h;
-    screen.sq_init = screen.sq_width * (-1);
-    screen.sq_target = screen.sc_width;
-
-    cout << "rezie" << endl;
+    screen.sqr->size_init = screen.sq_width * (-1);
+    screen.sqr->size_target = screen.sc_width;
 
     //reset all position
     for(int i =0; i<SQR_NUM;i++){
@@ -106,13 +104,13 @@ void Fis::update(){
 void Fis::draw(){
         
     ofSetColor(255, 255, 255);
-    float foo = screen.intpComes.update();
-    ofRect(0.0,(foo*screen.sc_height), screen.sc_width, screen.sc_height);
+    screen.drawStepSquare();
     
     
     //For Basic
     for(int i=0; i<SQR_NUM; i++){
-        switch(screen.colors[i]){
+        switch(screen.sqr->colors[i]){
+                
             case WHITE:
             ofSetColor(255, 255, 255);
             break;
@@ -135,10 +133,9 @@ void Fis::draw(){
         }
         
         if(direction==1){
-            ofRect(screen.interpolation[i].update()*direction,0.0, screen.sq_width, screen.sq_height);
+            ofRect(screen.sqr->interpolation[i].update()*direction,0.0, screen.sq_width, screen.sq_height);
         }else if(direction==-1){
-            ofRect(screen.interpolation[i].update()*direction+(screen.sq_width),0.0, screen.sq_width, screen.sq_height);
-//            cout << screen.interpolation[i].update() << endl;
+            ofRect(screen.sqr->interpolation[i].update()*direction+(screen.sq_width),0.0, screen.sq_width, screen.sq_height);
         }
     }
     

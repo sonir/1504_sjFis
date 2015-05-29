@@ -42,6 +42,7 @@ class ofApp : public ofBaseApp{
     
     
         Fis *fis;
+        slBlink blink;
 		
 };
 
